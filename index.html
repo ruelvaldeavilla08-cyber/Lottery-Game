@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f6f2" />
+    <title>Easy Slots</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-header">
+        <a class="brand" href="#" aria-label="Easy Slots home">Easy Slots</a>
+        <span class="for-fun">Just for fun</span>
+      </header>
+
+      <section class="game" aria-labelledby="game-title">
+        <div class="welcome">
+          <h1 id="game-title">Ready to play?</h1>
+          <p>Pick your bet, press Spin, and see if you get three matching symbols.</p>
+        </div>
+
+        <section class="machine" aria-label="Slot game">
+          <div class="balance">
+            <span>Your play money</span>
+            <strong id="balance">$100.00</strong>
+          </div>
+
+          <div class="reels" id="reels" aria-label="Slot machine results">
+            <div class="reel-row" data-row="0">
+              <span class="symbol">A</span><span class="symbol">B</span><span class="symbol">C</span>
+            </div>
+            <div class="reel-row" data-row="1">
+              <span class="symbol">D</span><span class="symbol">A</span><span class="symbol">B</span>
+            </div>
+            <div class="reel-row" data-row="2">
+              <span class="symbol">C</span><span class="symbol">D</span><span class="symbol">A</span>
+            </div>
+          </div>
+
+          <div class="controls">
+            <label class="control">
+              <span>Rows to play</span>
+              <select id="lines" aria-label="Rows to play">
+                <option value="1">1 row</option>
+                <option value="2">2 rows</option>
+                <option value="3" selected>3 rows</option>
+              </select>
+            </label>
+            <label class="control">
+              <span>Bet on each row</span>
+              <span class="amount-input">
+                <span>$</span>
+                <input id="bet" type="number" min="0.01" step="0.5" value="1" inputmode="decimal" aria-label="Bet on each row" />
+              </span>
+            </label>
+          </div>
+
+          <button class="spin-button" id="spin" type="button">Spin</button>
+          <p class="message" id="message" role="status" aria-live="polite">
+            Match three symbols in a row to win.
+          </p>
+        </section>
+
+        <section class="how-to-play" aria-labelledby="how-title">
+          <h2 id="how-title">How to play</h2>
+          <ol>
+            <li>Choose how many rows to play.</li>
+            <li>Choose how much to bet on each row.</li>
+            <li>Press Spin. Three matching symbols in a row win!</li>
+          </ol>
+          <p class="payouts">
+            <strong>Winning symbols:</strong>
+            A wins 5× your bet · B wins 4× · C wins 3× · D wins 2×
+          </p>
+        </section>
+
+        <form class="add-money" id="deposit-form">
+          <label for="deposit">Need more play money?</label>
+          <div class="add-money-input">
+            <span>$</span>
+            <input id="deposit" type="number" min="1" step="1" placeholder="Enter a whole dollar amount" inputmode="numeric" />
+            <button type="submit">Add</button>
+          </div>
+        </form>
+
+        <footer>Play money only. No real money is used.</footer>
+      </section>
+    </main>
+  </body>
+</html>
